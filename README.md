@@ -15,7 +15,7 @@ The Wiki contains the assignment instructions as given by the instructor. The Wi
 * Trouble shoot code  
 * Document code  
 
-Methods of Instruction: There will be some lecture to convey concepts and provide examples. Daily assignments will provide practice. There will be a final Project that summarizes what has been learned.
+**Methods of Instruction:** There will be some lecture to convey concepts and provide examples. Daily assignments will provide practice. There will be a final Project that summarizes what has been learned.
 
-Textbook: T-SQL Fundamentals, Itzik Ben-Gan, Microsoft Press, ISBN 978-07356-5814-1
+**Textbook:** T-SQL Fundamentals, Itzik Ben-Gan, Microsoft Press, ISBN 978-07356-5814-1
 
