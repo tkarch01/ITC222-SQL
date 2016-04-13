@@ -23,7 +23,7 @@ CREATE TABLE BusService
 -- MaintenanceKey int, an identity, primary key
 -- MainenanceDate Date, required
 -- Buskey int foreign key related to Bus, required
-CREATE TABLE Maintance
+CREATE TABLE Maintenance
 (
 	MaintenanceKey int identity(1,1) primary key,
 	MaintenanceDate Date not null,
@@ -52,40 +52,30 @@ CREATE TABLE MaintenanceDetail
 --  Maintenance detail setting MaintenanceDetailKey as the primary key
 Alter Table MaintenanceDetail
 Add Constraint PK_MaintenanceDetailKey
-	Primary Key (MaintenanceDetailKey);
+	Primary Key (MaintenanceDetailKey)
 
 --5 Use alter table to set MaintenceKey as a foreign key
+--  Use alter table to set EmployeeKey as a foreign key
 Alter Table MaintenanceDetail
-Add Constraint FK_MaintenceKey Foreign Key (MaintenanceKey)
-	References Maintance (MaintenanceKey);
-
--- between 5 & 6 Use alter table to set EmployeeKey as 
---  a foreign key
-Alter Table 
+Add Constraint FK_MaintenanceKey Foreign Key (MaintenanceKey)
+	References Maintenance (MaintenanceKey)
+Alter Table MaintenanceDetail
 Add Constraint FK_EmployeeKey Foreign Key (EmployeeKey)
-	References -- tablename (EmployeeKey); 
+	References Employee (EmployeeKey) 
 
 --6 Use alter table to set BusServiceKey as a foreign key
 Alter Table MaintenanceDetail
 Add Constraint FK_BusServiceKey Foreign Key (BusServiceKey)
-	References BusService (BusServiceKey);
+	References BusService (BusServiceKey)
 
 --7 Add a column to BusType named BusTypeAccessible. 
 --  Its data type should be bit 0 for no and 1 for yes.
 Alter Table BusType
-Add BusTypeAccessible -- type bit 0 for no and 1 for yes
+Add BusTypeAccessible bit
 
 --8 Use alter table to Add a constraint to email in the 
 --  Employee table to make sure each email is uniqu
 Alter Table Employee
-Add Constraint -- to email to make each email unique
-
-
-
-
- 
-
-
-
-
+Add Constraint UC_EmployeeEmail
+	unique (EmployeeEmail)
 
