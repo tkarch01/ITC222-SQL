@@ -26,10 +26,10 @@ CREATE TABLE BusService
 CREATE TABLE Maintance
 (
 	MaintenanceKey int identity(1,1) primary key,
-	MainenanceDate Date not null,
+	MaintenanceDate Date not null,
 	Buskey int not null,
 	Constraint FK_Buskey Foreign Key(Buskey)
-		References BusService(BusServiceKey) --Check re instructions
+		References BusService(BusServiceKey) 
 )
 
 --3 MaintenanceDetail (we will use Alter table statements 
@@ -41,7 +41,7 @@ CREATE TABLE Maintance
 -- MaintenanceNotes  variable character
 CREATE TABLE MaintenanceDetail
 (
-	MaintenceDetailKey int identity(1,1),
+	MaintenanceDetailKey int identity(1,1),
 	MaintenanceKey int not null,
 	EmployeeKey int not null,
 	BusServiceKey int not null,
@@ -61,7 +61,7 @@ Add Constraint FK_MaintenceKey Foreign Key (MaintenanceKey)
 
 -- between 5 & 6 Use alter table to set EmployeeKey as 
 --  a foreign key
-Alter Table --need table name
+Alter Table 
 Add Constraint FK_EmployeeKey Foreign Key (EmployeeKey)
 	References -- tablename (EmployeeKey); 
 
